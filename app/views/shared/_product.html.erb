@@ -7,16 +7,16 @@
   <%= f.text_field :name %>
   <br>
   <%= f.label :price %>
-  <%= f.text_field :price %>
+  <%= f.number_field :price %>
   <br>
   <%= f.label :image_url %>
   <%= f.text_field :image_url %>
   <br>
   <%= f.label :description %>
-  <%= f.text_field :description %>
+  <%= f.text_area :description %>
   <br>
   <%= f.label :in_stock_qty %>
-  <%= f.text_field :in_stock_qty %>
+  <%= f.number_field :in_stock_qty %>
   <br>
   <%= f.submit %>
 <% end %>
