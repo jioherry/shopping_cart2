@@ -5,7 +5,7 @@
 <% @products.each do |product| %>
 
 	<div class="product-box">
-		<%= link_to products_path(product) do %>
+		<%= link_to product_path(product) do %>
 			<%= image_tag(product.image_url, width: 50 ) %><br>
 		<% end %>
 
