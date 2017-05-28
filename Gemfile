@@ -35,6 +35,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'carrierwave', '~> 1.0'
+gem 'kaminari'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -44,6 +45,7 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'rspec-rails', '~> 3.5'
   gem 'ffaker'
+  gem 'kaminari'
 end
 
 group :development do
@@ -55,6 +57,7 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'rspec-rails', '~> 3.5'
   gem 'ffaker'
+  gem 'kaminari'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
