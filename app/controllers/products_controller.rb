@@ -8,4 +8,11 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
   end
 
+  def add_to_cart
+    @product = Product.find(params[:id])
+    current_cart.add_cart_item(@product)
+    # add_to_cart action 不是 CRUD 的慣例命名,我們需要在 routes 裡設定這組路由
+    redirect_to root_path
+  end
+
 end
