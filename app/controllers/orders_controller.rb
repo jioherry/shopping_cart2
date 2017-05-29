@@ -17,6 +17,7 @@ class OrdersController < ApplicationController
 
     if @order.save
       current_cart.destroy
+      UserMailer.notify_order_create(@order).deliver_later!
       redirect_to order_path(@order), notice: '已結帳！'
     else
       render :new
