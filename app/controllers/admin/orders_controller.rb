@@ -1,8 +1,17 @@
 class Admin::OrdersController < ApplicationController
 
-	def index
-		@orders = Order.all
-	end
+  before_action :authenticate_user!
+  before_action :set_order, only: [:show, :edit, :update]
+
+  def index
+    if params[:order_status].present?
+      @orders = Order.where( :order_status => params[:order_status])
+    elsif params[:payment_status].present?
+      @orders = Order.where( :payment_status => params[:payment_status])
+    else
+      @orders = Order.all
+    end
+  end
 
 	def update
 		@order.update(order_params)
