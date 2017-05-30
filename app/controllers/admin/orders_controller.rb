@@ -17,7 +17,7 @@ class Admin::OrdersController < ApplicationController
 		@order.update(order_params)
 
 		if @order.order_status == 'shipped'
-			UserMailer.notify_shipped(@order).deliver_now!
+			UserMailer.notify_shipped(@order).deliver_later!
 		end
 
 		redirect_to admin_orders_path, notice: 'Date Update'
