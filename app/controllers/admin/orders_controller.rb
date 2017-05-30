@@ -20,7 +20,7 @@ class Admin::OrdersController < ApplicationController
 			UserMailer.notify_shipped(@order).deliver_now!
 		end
 
-		redirct_to admin_orders_path, notice: 'Date Update'
+		redirect_to admin_orders_path, notice: 'Date Update'
 	end
 
 	private
