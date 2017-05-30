@@ -18,4 +18,12 @@ class Order < ApplicationRecord
   	end
   end
 
+  def init_status
+    if payment_method == 'atm'
+      self.payment_status = 'atm_pending'
+    else
+      self.payment_status = 'credit_pending'
+    end
+  end
+
 end
