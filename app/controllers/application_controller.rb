@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
 
   def authenticate_admin
     unless current_user.admin?
-      flash[:alert] = "Not allow!"
+      flash[:alert] = "喔喔!出現錯誤，請聯絡客服"
       redirect_to root_path
     end
   end
