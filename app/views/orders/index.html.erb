@@ -34,7 +34,7 @@
       <td><%= order.order_status %></td>
       <td><%= link_to '瀏覽', order_path(order) %></td>
       <td>
-        <% if order.order_status != "shipped" %>
+        <% if order.order_status != "已出貨" %>
           <%= link_to '取消訂單', order_path(order), method: :patch %>
         <% end %>
       </td>

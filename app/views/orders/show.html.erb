@@ -10,10 +10,9 @@
   <h3>選擇結帳方式</h3>
   <% Payment::PAYMENT_METHODS.each do |method| %>
 
-  <%= link_to t(method, scope: 'payment.pay2go'),
-  checkout_order_path(@order, payment_method: method),
-  method: :post %>
-
+    <%= link_to t(method, scope: 'payment.pay2go'),
+    checkout_order_path(@order, payment_method: method),
+    method: :post %>
   <% end %>
 
 <% end %>
