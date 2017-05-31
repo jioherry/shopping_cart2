@@ -54,6 +54,7 @@ class Payment < ApplicationRecord
 	  def update_order_status
 	    if self.paid? && !self.order.paid?
 	      order.paid = true
+	      order.update_payment_status
 	      order.save(validate: false)
 	    end
 	  end

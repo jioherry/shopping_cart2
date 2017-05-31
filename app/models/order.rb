@@ -27,4 +27,14 @@ class Order < ApplicationRecord
     end
   end
 
+  def update_payment_status
+    if self.paid?
+      if self.payment_method == 'atm'
+        self.payment_status = 'atm_paid'
+      else
+        self.payment_status = 'credit_paid'
+      end
+    end
+  end
+
 end

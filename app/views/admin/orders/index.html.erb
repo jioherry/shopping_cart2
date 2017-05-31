@@ -12,7 +12,7 @@
 	<% end %>
 
 </div>
-
+<br><br>
 <table>
 	<tr>
 		<th>#</th>
@@ -36,6 +36,7 @@
 			<td><%= order.address %></td>
 			<td><%= order.amount %></td>
 			<td><%= order.payment_method %></td>
+			<td><%= order.payment_status %></td>
 			<td><%= order.order_status %></td>
 			<td><%= order.payment_status %></td>
 			<td><%= link_to 'show', admin_order_path(order) %></td>

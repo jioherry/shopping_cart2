@@ -4,6 +4,8 @@ class Admin::OrdersController < ApplicationController
   before_action :set_order, only: [:show, :edit, :update]
 
   def index
+  	@orders = Order.all
+  	
     if params[:order_status].present?
       @orders = Order.where( :order_status => params[:order_status])
     elsif params[:payment_status].present?
