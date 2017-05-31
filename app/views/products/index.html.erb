@@ -10,7 +10,7 @@
       <th>小計</th>
     </tr>
     <% current_cart.cart_items.each do |item| %>
-        <!-- current_cart 類似 devise current_user，但這方法是自己撰寫，方法則撰寫在 application_controller 裡-->
+<!-- current_cart 類似 devise current_user，但這方法是自己撰寫，方法則撰寫在 application_controller 裡-->
       <%= render partial: 'shared/item', locals: { item: item }%>
     <% end %>
   </table>

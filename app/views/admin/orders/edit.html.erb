@@ -1,6 +1,6 @@
 <h1>Admin: Edit Order</h1>
 
-<%= render partial: "shared/order_list", locals: { :order => @order} %>
+<%= render partial: "shared/order_list", locals: { order: @order} %>
 <hr>
 
 <%= form_for [:admin, @order] do |f| %>
