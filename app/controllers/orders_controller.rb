@@ -32,19 +32,18 @@ class OrdersController < ApplicationController
   end
 
   def update
-    if order.order_status != "已出貨"
-      order.update!( order_status: '取消訂單')
+    if order.order_status != "shipped"
+      order.update!( order_status: 'cancelled')
       flash[:alert] = "訂單已取消"
     end
-
     redirect_to orders_path
   end
 
   def checkout
     if @order.paid?
-      redirect_to :back, alert: '訂單已付款完成'
+      redirect_to :back, alert: 'The order was paid'
     else
-      @order.payments.create!(:payment_method => params[:payment_method])
+      @payment = @order.payments.create!(payment_method: params[:payment_method])
       render layout: false
     end
   end

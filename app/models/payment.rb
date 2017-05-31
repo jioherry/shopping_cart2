@@ -1,6 +1,5 @@
 class Payment < ApplicationRecord
-
-	serialize :params, JSON
+  serialize :params, JSON
   belongs_to :order
 
   PAYMENT_METHODS = %w[Credit WebATM ATM] # CVS BARCODE
@@ -47,16 +46,14 @@ class Payment < ApplicationRecord
 
   private
 
-	  def setup_amount
-	    self.amount = order.amount if order
-	  end
+  def setup_amount
+    self.amount = order.amount if order
+  end
 
-	  def update_order_status
-	    if self.paid? && !self.order.paid?
-	      order.paid = true
-	      order.update_payment_status
-	      order.save(validate: false)
-	    end
-	  end
-
+  def update_order_status
+    if self.paid? && !self.order.paid?
+      order.paid = true
+      order.save(validate: false)
+    end
+  end
 end

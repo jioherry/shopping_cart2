@@ -1,6 +1,6 @@
 class Pay2goController < ApplicationController
 
-	  skip_before_action :verify_authenticity_token
+  skip_before_action :verify_authenticity_token
 
   def return
     result = nil
@@ -39,5 +39,5 @@ class Pay2goController < ApplicationController
   def json_data
     JSON.parse(params['JSONData'])
   end
-	
+
 end
