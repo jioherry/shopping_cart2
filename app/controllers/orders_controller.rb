@@ -32,8 +32,8 @@ class OrdersController < ApplicationController
   end
 
   def update
-    if order.order_status != "shipped"
-      order.update!( order_status: 'cancelled')
+    if @order.order_status != "shipped"
+      @order.update!( order_status: 'cancelled')
       flash[:alert] = "訂單已取消"
     end
     redirect_to orders_path

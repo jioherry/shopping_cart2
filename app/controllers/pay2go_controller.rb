@@ -8,7 +8,7 @@ class Pay2goController < ApplicationController
       @payment = Payment.find_and_process(json_data)
       result = @payment.save
     end
-
+    
     unless result
       flash[:alert] = t("registration.error.failed_pay")
     end
