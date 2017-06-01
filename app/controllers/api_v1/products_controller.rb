@@ -1,0 +1,15 @@
+class ApiV1::ProductsController < ApplicationController
+
+	def index
+		@products = Product.all
+	end
+
+	def show
+		@product = Product.find(id: params[:id])
+
+		if !@product
+			render json: { message: "Can't find the product!" }, status: 400
+		end
+	end
+
+end
