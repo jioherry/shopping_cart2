@@ -7,7 +7,7 @@ default: &default
   hash_key: qBGU6t2UHtJKUcabNoKEcLvGh3H1Gno7
   hash_iv: Y425x4ZeyJZtV9EJ
   url: https://ccore.spgateway.com/MPG/mpg_gateway
-  notify_url: 'https://requestb.in/v6r6yzv6'  # 需至 requestb.in 取得代碼
+  notify_url: 'https://requestb.in/v6r6yzv62111'  # 需至 requestb.in 取得代碼
 
 development:
   <<: *default

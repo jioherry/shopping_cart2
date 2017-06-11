@@ -1,3 +1,4 @@
+
 <h1>Product Index</h1>
 
 <section id="my-cart">
@@ -10,7 +11,6 @@
       <th>小計</th>
     </tr>
     <% current_cart.cart_items.each do |item| %>
-<!-- current_cart 類似 devise current_user，但這方法是自己撰寫，方法則撰寫在 application_controller 裡-->
       <%= render partial: 'shared/item', locals: { item: item }%>
     <% end %>
   </table>
@@ -24,8 +24,7 @@
     <%= link_to product_path(product) do %>
       <%= image_tag(product.image_url, width: 50 ) %><br>
     <% end %>
-    <%= button_to 'Add to Cart', add_to_cart_product_path(product), remote: true %>
-    <div class="msg"></div>
+    <div class="msg"><%= button_to 'Add to Cart', add_to_cart_product_path(product), remote: true %></div>
     <%= product.name %><br>
     $<%= product.price %>
   </div>

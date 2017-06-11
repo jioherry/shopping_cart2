@@ -9,7 +9,7 @@ class Cart < ApplicationRecord
       existing_item.quantity += 1
       existing_item.save!
     else
-      cart_item = cart_items.build( product_id: product.id )
+      cart_item = cart_items.build( product_id: product.id, :quantity => 1 )
       cart_item.save!
     end
     self.cart_items
