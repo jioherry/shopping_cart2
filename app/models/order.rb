@@ -27,7 +27,7 @@ class Order < ApplicationRecord
       self.payment_status = "credit_pending"
     end
   end
-end
+
 
   def update_payment_status
     if self.paid?
